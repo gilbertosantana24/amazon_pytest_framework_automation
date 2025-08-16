@@ -1,6 +1,5 @@
 import os
 from time import sleep
-
 from page_objects.login_page import LoginPage
 
 class LoginSteps:
@@ -16,13 +15,14 @@ class LoginSteps:
 
     def enter_email_and_continue(self):
         self.login_page.fill_email(os.getenv("AMAZON_EMAIL"))
-        sleep(2)
+        sleep(1)
         self.login_page.click_continue()
 
     def enter_password_and_click_sign_in(self):
         self.login_page.fill_password(os.getenv("AMAZON_PASSWORD"))
-        sleep(2)
+        sleep(1)
         self.login_page.submit_sign_in()
+        sleep(3)
 
 
 
